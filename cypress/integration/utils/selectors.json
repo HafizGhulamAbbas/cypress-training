@@ -1,0 +1,9 @@
+{"landingPage": {
+    "newListInput": "input[placeholder='New list']",
+    "newListAddButton": ":nth-child(1) > .card > .list-group > .AddToDoListItem > .mb-3 > .input-group-append > .btn",
+    "deleteListButton": "button[class='btn btn-danger btn-sm']",
+    "newListItemInput": "input[placeholder='New item']",
+    "newListItemAddButton": "button[class='btn btn-outline-secondary']",
+    "itemStatusCheckbox": ":nth-child(1) > .form-check > .form-check-input",
+    "itemDeleteText": ":nth-child(1) > .DeleteItem"
+}}
