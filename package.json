@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "todo": "node_modules/.bin/cypress run",
+    "chromeTest": "npm run todo -- --browser chrome --headed "
   },
   "author": "",
   "license": "ISC",
