@@ -294,10 +294,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HafizGhulamAbbas/toptal-frontend.git"
+    "url": "git+https://github.com/HafizGhulamAbbas/cypress-training"
   },
   "bugs": {
-    "url": "https://github.com/HafizGhulamAbbas/toptal-frontend/issues"
+    "url": "https://github.com/HafizGhulamAbbas/cypress-training/issues"
   },
-  "homepage": "https://github.com/HafizGhulamAbbas/toptal-frontend#readme"
+  "homepage": "https://github.com/HafizGhulamAbbas/cypress-training#readme"
 }
