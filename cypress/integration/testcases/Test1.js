@@ -13,5 +13,8 @@ describe('My first test suite', function () {
 
         // Another easy way
         cy.get('.products').children().should('have.length', 4)
+
+        // Click Add to cart for the third product after verifying the button test
+        cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
     })
   })
