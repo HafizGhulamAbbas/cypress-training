@@ -16,5 +16,14 @@ describe('My first test suite', function () {
 
         // Click Add to cart for the third product after verifying the button test
         cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
+
+        // Add to car a item base on product name
+        cy.get('.products').find('.product').each((element) => {
+            const itemName = element.find('h4.product-name').text()
+            if(itemName.includes('Cashews')){
+                // element.find('button').click() // it is depreciated and we need to resolve a promise to make it wrap
+                cy.wrap(element).find('button').click()
+            }
+        })
     })
   })
