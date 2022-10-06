@@ -25,5 +25,15 @@ describe('My first test suite', function () {
                 cy.wrap(element).find('button').click()
             }
         })
+
+        // JQuery vs cypress commands
+        const logo = cy.get('.brand')
+        cy.log(logo.text()) // it gives error: logo.text is not a function. And we have to resolve the promise using .then() as mentioned below
+        // const logo = is not cypress code. Even .text() is not a cypress command.
+
+        // it will work fine but cypress doesn't recommend it to use .then() as they are handling it by themselves.
+        const logo_ = cy.get('.brand').then((response) => {
+            cy.log(response.text())
+        })
     })
   })
