@@ -9,6 +9,6 @@ module.exports = defineConfig({
     defaultCommandTimeout: 6000
   },
   env: {
-    url: 'http://localhost:3030/'
+    url: 'https://rahulshettyacademy.com/seleniumPractise/#/'
   }
 })
