@@ -9,6 +9,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 6000
   },
   env: {
-    url: 'https://rahulshettyacademy.com/seleniumPractise/#/'
+    url: 'https://rahulshettyacademy.com/seleniumPractise/#/',
+    e_commerce_url: 'https://rahulshettyacademy.com/angularpractice/'
   }
 })
