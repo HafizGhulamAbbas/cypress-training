@@ -7,7 +7,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: 'cypress/integration/testcases/*.js',
-    defaultCommandTimeout: 6000
+    defaultCommandTimeout: 6000,
+    reporter: 'mochawesome'
   },
   env: {
     url: 'https://rahulshettyacademy.com/seleniumPractise/#/',
