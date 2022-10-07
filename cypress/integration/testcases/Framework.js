@@ -25,10 +25,6 @@ describe('Place Order', function () {
 
         // Select an item and add to cart
         cy.get('a[href*="shop"]').click()
-        cy.get('h4.card-title').each((element, index) => {
-            if(element.text().includes("Blackberry")) {
-                cy.get('button.btn.btn-info').eq(index).click()
-            }
-        })
+        cy.selectProduct("Blackberry")
     })    
   })
