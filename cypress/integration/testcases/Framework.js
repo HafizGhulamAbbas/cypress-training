@@ -1,4 +1,6 @@
 /// <reference types = "Cypress" />
+import HomePage from '../pageObjects/HomePage'
+import ProductsPage from '../pageObjects/ProductsPage'
 
 describe('Place Order', function () {
 
@@ -10,22 +12,27 @@ describe('Place Order', function () {
     })
 
     it('Add cart to item and purchase', function () {
+        const homePage = new HomePage()
+        const productsPage = new ProductsPage()
+
         cy.visit(Cypress.env('e_commerce_url'))
 
-        cy.get('input[name="name"]:nth-child(2)').type(this.data.name)
-        cy.get('select').select(this.data.gender)
-        cy.get('input[name="name"]:nth-child(1)').should('have.value', this.data.name)
+        homePage.getNameInput().type(this.data.name)
+        homePage.getGender().select(this.data.gender)
+        homePage.getBindedNameInput().should('have.value', this.data.name)
 
         // Validating the name input field if it has min length 2
-        cy.get('input[name="name"]:nth-child(2)').should('have.attr', 'minlength', 2)
+        homePage.getNameInput().should('have.attr', 'minlength', 2)
 
         // Validate disability of an element
-        cy.get('#inlineRadio3').should('be.disabled')
+        homePage.getEmployeeStatusEntrepreneur().should('be.disabled')
 
         // Select multiple items and add to cart
-        cy.get('a[href*="shop"]').click()
+        homePage.getShopPage().click()
         for(let product of this.data.productName){
             cy.selectProduct(product)
         }
+
+        productsPage.getCheckOut().click()
     })    
   })
