@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const selectors = require('../utils/selectors.json')
+const selectors = require('../../integration/utils/selectors.json')
 
 class TodoLists {
   getNewListInput () {

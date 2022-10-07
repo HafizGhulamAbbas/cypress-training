@@ -1,6 +1,8 @@
 /// <reference types = "Cypress" />
-import HomePage from '../pageObjects/HomePage'
-import ProductsPage from '../pageObjects/ProductsPage'
+import HomePage from '../../support/pageObjects/HomePage'
+import ProductsPage from '../../support/pageObjects/ProductsPage'
+import CartPage from '../../support/pageObjects/CartPage'
+import CheckoutPage from '../../support/pageObjects/CheckoutPage'
 
 describe('Place Order', function () {
 
@@ -14,6 +16,8 @@ describe('Place Order', function () {
     it('Add cart to item and purchase', function () {
         const homePage = new HomePage()
         const productsPage = new ProductsPage()
+        const cartPage = new CartPage()
+        const checkoutPage = new CheckoutPage()
 
         cy.visit(Cypress.env('e_commerce_url'))
 
@@ -34,5 +38,30 @@ describe('Place Order', function () {
         }
 
         productsPage.getCheckOut().click()
+
+        let totalPrice = 0
+        cartPage.getProductsPrice().each((product) => {
+            const productPrice = product.text().split(" ")[1].trim()
+            totalPrice += Number(productPrice)
+        })
+        .then(() => {
+            cy.log("Total Price Calculation: " + totalPrice)
+        })
+        
+        cartPage.getTotalPrice()
+        .then((element) => {
+            const price = Number(element.text().split(" ")[1].trim())
+            expect(price).to.equal(totalPrice)
+        })
+
+        cartPage.getCheckoutButton().click()
+
+        checkoutPage.getDeliveryLocation().type('India')
+        Cypress.config('defaultCommandTimeout', 8000)
+        checkoutPage.getIndiaAsDeliveryLocation().click()
+
+        checkoutPage.getTermsAndCondition().check({force: true}).should('be.checked')
+        checkoutPage.getPurchaseButton().click()
+        checkoutPage.getSuccessAlert().should('include.text', checkoutPage.getSuccessMessage())
     })    
   })
