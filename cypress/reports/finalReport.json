@@ -1,0 +1,691 @@
+{
+  "stats": {
+    "suites": 11,
+    "tests": 11,
+    "passes": 10,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-10-07T12:02:00.368Z",
+    "end": "2022-10-07T12:03:42.245Z",
+    "duration": 64099,
+    "testsRegistered": 11,
+    "passPercent": 90.9090909090909,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bb039af0-bf54-4582-85b8-407585492b11",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Alerts.js",
+      "file": "cypress/integration/testcases/Alerts.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "69377068-4259-46ef-9b4b-3904370eb799",
+          "title": "Alerts and confirm alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "check for alerts and confirm alerts",
+              "fullTitle": "Alerts and confirm alerts check for alerts and confirm alerts",
+              "timedOut": null,
+              "duration": 6524,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#alertbtn').click();\ncy.get('[value=\"Confirm\"]').click(); //window:alert\ncy.on('window:alert', response => {\n  //Mocha\n  expect(response).to.equal('Hello , share this practice page and share your knowledge');\n});\ncy.on('window:confirm', response => {\n  //Mocha\n  expect(response).to.equal('Hello , Are you sure you want to confirm?');\n});",
+              "err": {},
+              "uuid": "4aa37d6b-ad1d-4b6a-80f9-74b891c64e30",
+              "parentUUID": "69377068-4259-46ef-9b4b-3904370eb799",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4aa37d6b-ad1d-4b6a-80f9-74b891c64e30"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6524,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2ef066a9-5b0e-462f-b7ea-e455ed4c5c8e",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/CheckBox.js",
+      "file": "cypress/integration/testcases/CheckBox.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "80523eaf-111e-439a-8140-158fbb308eaf",
+          "title": "Handle Check Boxes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "using check method provided by cypress",
+              "fullTitle": "Handle Check Boxes using check method provided by cypress",
+              "timedOut": null,
+              "duration": 4295,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#checkBoxOption1').check().should('be.checked').and('have.value', \"option1\");\ncy.get('#checkBoxOption1').uncheck().should('not.be.checked'); // Check multiple checkboxes using value\ncy.get('input[type=\"checkbox\"]').check(['option2', 'option3']);\ncy.get('#checkBoxOption2').check().should('be.checked');\ncy.get('#checkBoxOption3').check().should('be.checked');",
+              "err": {},
+              "uuid": "22069115-504d-45a2-bdba-d1b516ad4832",
+              "parentUUID": "80523eaf-111e-439a-8140-158fbb308eaf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "22069115-504d-45a2-bdba-d1b516ad4832"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4295,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "eb883e09-28dd-4c3e-a70e-8a2b33d01a3d",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/DynamicDropDown.js",
+      "file": "cypress/integration/testcases/DynamicDropDown.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d895340c-5910-40c4-b04d-404757cd6115",
+          "title": "Handle Dynamic Dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "using check method provided by cypress",
+              "fullTitle": "Handle Dynamic Dropdown using check method provided by cypress",
+              "timedOut": null,
+              "duration": 3717,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#autocomplete').type('ind');\ncy.get('.ui-menu-item div').each(element => {\n  if (element.text() === \"India\") {\n    cy.wrap(element).click();\n  }\n}); //autocomplete\ncy.get('#autocomplete').should('have.value', 'India');",
+              "err": {},
+              "uuid": "206829d4-eae2-4700-ac12-10969220de9a",
+              "parentUUID": "d895340c-5910-40c4-b04d-404757cd6115",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "206829d4-eae2-4700-ac12-10969220de9a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3717,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "54c9f539-02a2-4fa8-9dad-ef1b43ee9129",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Framework.js",
+      "file": "cypress/integration/testcases/Framework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b1079c10-c807-4f3f-b1f9-89b96e211a3b",
+          "title": "Place Order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add cart to item and purchase",
+              "fullTitle": "Place Order Add cart to item and purchase",
+              "timedOut": null,
+              "duration": 8307,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst productsPage = new _ProductsPage.default();\nconst cartPage = new _CartPage.default();\nconst checkoutPage = new _CheckoutPage.default();\ncy.visit(Cypress.env('e_commerce_url'));\nhomePage.getNameInput().type(this.data.name);\nhomePage.getGender().select(this.data.gender);\nhomePage.getBindedNameInput().should('have.value', this.data.name); // Validating the name input field if it has min length 2\nhomePage.getNameInput().should('have.attr', 'minlength', 2); // Validate disability of an element\nhomePage.getEmployeeStatusEntrepreneur().should('be.disabled'); // Select multiple items and add to cart\nhomePage.getShopPage().click();\nfor (let product of this.data.productName) {\n  cy.selectProduct(product);\n}\nproductsPage.getCheckOut().click();\nlet totalPrice = 0;\ncartPage.getProductsPrice().each(product => {\n  const productPrice = product.text().split(\" \")[1].trim();\n  totalPrice += Number(productPrice);\n}).then(() => {\n  cy.log(\"Total Price Calculation: \" + totalPrice);\n});\ncartPage.getTotalPrice().then(element => {\n  const price = Number(element.text().split(\" \")[1].trim());\n  expect(price).to.equal(totalPrice);\n});\ncartPage.getCheckoutButton().click();\ncheckoutPage.getDeliveryLocation().type('India');\nCypress.config('defaultCommandTimeout', 8000);\ncheckoutPage.getIndiaAsDeliveryLocation().click();\ncheckoutPage.getTermsAndCondition().check({\n  force: true\n}).should('be.checked');\ncheckoutPage.getPurchaseButton().click();\ncheckoutPage.getSuccessAlert().should('include.text', checkoutPage.getSuccessMessage());",
+              "err": {},
+              "uuid": "689fb5af-ed74-4a9c-bbbb-904ecafc84a9",
+              "parentUUID": "b1079c10-c807-4f3f-b1f9-89b96e211a3b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "689fb5af-ed74-4a9c-bbbb-904ecafc84a9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8307,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "40b97cfe-8b0b-49d3-95d7-2e7eb2caf13d",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Iframe.js",
+      "file": "cypress/integration/testcases/Iframe.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "60df50ec-b912-452f-8f83-4c2022596a75",
+          "title": "Handle iframe",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handle iframe in cypress after installing \"cypress-iframe\" package",
+              "fullTitle": "Handle iframe Handle iframe in cypress after installing \"cypress-iframe\" package",
+              "timedOut": null,
+              "duration": 7832,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice');\ncy.frameLoaded('#courses-iframe');\ncy.iframe().find('a[href=\"mentorship\"]').eq(0).click();\ncy.wait(2000);\ncy.iframe().find('h1[class*=\"pricing-title\"]').should('have.length', 2);",
+              "err": {},
+              "uuid": "ee2cafec-6cf4-43af-875f-7a8f8ca44031",
+              "parentUUID": "60df50ec-b912-452f-8f83-4c2022596a75",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ee2cafec-6cf4-43af-875f-7a8f8ca44031"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7832,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "daf87052-ff0e-4e11-982b-38f0ac6710c3",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/MouseHover.js",
+      "file": "cypress/integration/testcases/MouseHover.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "09a17a0e-2f5b-4278-a114-5f3b094b3c75",
+          "title": "Mouse Hover",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handling mouse hover in cypress",
+              "fullTitle": "Mouse Hover Handling mouse hover in cypress",
+              "timedOut": null,
+              "duration": 5024,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('div.mouse-hover-content').invoke('show');\ncy.contains('Top').click(); // or simply use cypress command cy.contains('Top').click({force: true}) instead of jQuery\ncy.url().should('contain', 'top');",
+              "err": {},
+              "uuid": "fdbf37f4-b865-4cb7-9ecc-a3c4ef002f8e",
+              "parentUUID": "09a17a0e-2f5b-4278-a114-5f3b094b3c75",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fdbf37f4-b865-4cb7-9ecc-a3c4ef002f8e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5024,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b1412a8c-dec4-4cfd-8099-7e19a7a0bb2d",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/StaticDropDown.js",
+      "file": "cypress/integration/testcases/StaticDropDown.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cce3e7d0-83c5-4c33-81c2-443f875cc488",
+          "title": "Handle Static Dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "using check method provided by cypress",
+              "fullTitle": "Handle Static Dropdown using check method provided by cypress",
+              "timedOut": null,
+              "duration": 3760,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('select').select('option2').should('have.value', 'option2');",
+              "err": {},
+              "uuid": "46d2046d-f7cd-42ef-8316-12f60f2fd4c9",
+              "parentUUID": "cce3e7d0-83c5-4c33-81c2-443f875cc488",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "46d2046d-f7cd-42ef-8316-12f60f2fd4c9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3760,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e7119a2c-664e-4b06-82bc-95ebe213a0ea",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Tables.js",
+      "file": "cypress/integration/testcases/Tables.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "472b2145-7713-4c6f-9111-2f05b3a099b7",
+          "title": "Handle tables",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handle multiple tables and extract values of siblings",
+              "fullTitle": "Handle tables Handle multiple tables and extract values of siblings",
+              "timedOut": null,
+              "duration": 4522,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const tableLocator = 'table[id=\"product\"][name=\"courses\"] tr td:nth-child(2)'; //Check boxes\ncy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(tableLocator).each((element, index) => {\n  const text = element.text();\n  if (text.includes(\"Python\")) {\n    cy.get(tableLocator).eq(index).next().then(function (price) {\n      const priceText = price.text();\n      expect(priceText).to.equal('25');\n    });\n  }\n});",
+              "err": {},
+              "uuid": "087bda7c-52d8-4289-842e-fe73f69630fd",
+              "parentUUID": "472b2145-7713-4c6f-9111-2f05b3a099b7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "087bda7c-52d8-4289-842e-fe73f69630fd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4522,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "12a1c044-9387-4509-896f-28a3226215e6",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Tabs.js",
+      "file": "cypress/integration/testcases/Tabs.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6b278f82-d466-4ce5-8923-800ba9d31075",
+          "title": "Tabs and Browser navigation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handles tabs and window navigation",
+              "fullTitle": "Tabs and Browser navigation Handles tabs and window navigation",
+              "timedOut": null,
+              "duration": 4733,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/'); // Cypres, by default, doesn't handle target=\"_blank\" which opens tab in new window. So, we need to remove the attribute using jQuery and click to open new tab in the same window\ncy.get('#opentab').invoke('removeAttr', 'target').click();\ncy.url().should('include', 'rahulshettyacademy');\ncy.go('back');",
+              "err": {},
+              "uuid": "206a810e-9db8-4655-98bb-a740a2069949",
+              "parentUUID": "6b278f82-d466-4ce5-8923-800ba9d31075",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "206a810e-9db8-4655-98bb-a740a2069949"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4733,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "07573fdd-a0c2-40c8-833e-81fa584cf026",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Test1.js",
+      "file": "cypress/integration/testcases/Test1.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "73426b4b-88e0-4104-a998-1c6623612c3d",
+          "title": "My first test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My first test case",
+              "fullTitle": "My first test suite My first test case",
+              "timedOut": null,
+              "duration": 10950,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(Cypress.env('url'));\ncy.get('.search-keyword').type('ca');\ncy.wait(2000);\ncy.get('.product:visible').should('have.length', 4); // Parent children chaining\ncy.get('.products').as('productLocator');\ncy.get('@productLocator').find('.product').should('have.length', 4); // Another easy way\ncy.get('@productLocator').children().should('have.length', 4); // Click Add to cart for the third product after verifying the button test\ncy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click(); // Add to car a item base on product name\ncy.get('@productLocator').find('.product').each(element => {\n  const itemName = element.find('h4.product-name').text();\n  if (itemName.includes('Cashews')) {\n    // element.find('button').click() // it is depreciated and we need to resolve a promise to make it wrap\n    cy.wrap(element).find('button').click();\n  }\n}); // JQuery vs cypress commands\nconst logo = cy.get('.brand'); //cy.log(logo.text()) // it gives error: logo.text is not a function. And we have to resolve the promise using .then() as mentioned below\n// const logo = is not cypress code. Even .text() is not a cypress command.\n// it will work fine but cypress doesn't recommend it to use .then() as they are handling it by themselves.\nconst logo_ = cy.get('.brand').then(response => {\n  cy.log(response.text());\n});\ncy.get('#opentab').then(response => {\n  const url = response.prop('href');\n  cy.visit(url);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `#opentab`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `#opentab`, but never found it.\n    at Context.eval (webpack:///./cypress/integration/testcases/Test1.js:40:11)",
+                "diff": null
+              },
+              "uuid": "067323f6-51bc-4a55-8afc-76e385e70456",
+              "parentUUID": "73426b4b-88e0-4104-a998-1c6623612c3d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "067323f6-51bc-4a55-8afc-76e385e70456"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10950,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1f8adca6-e9fd-46b3-b170-b978610d82b3",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Visibility.js",
+      "file": "cypress/integration/testcases/Visibility.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d91ab673-8dfa-47dd-bdde-d51d6ba7d12d",
+          "title": "Check element visibility and radio button check",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "illustrates element visible or not and radio button check example",
+              "fullTitle": "Check element visibility and radio button check illustrates element visible or not and radio button check example",
+              "timedOut": null,
+              "duration": 4435,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#displayed-text').should('be.visible');\ncy.get('#hide-textbox').click();\ncy.get('#displayed-text').should('not.be.visible');\ncy.get('#show-textbox').click();\ncy.get('#displayed-text').should('be.visible'); // radio buttons\ncy.get('[value=\"radio2\"]').check().should('be.checked');",
+              "err": {},
+              "uuid": "698f3874-5fe3-45a2-b1ad-d4ec267267cf",
+              "parentUUID": "d91ab673-8dfa-47dd-bdde-d51d6ba7d12d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "698f3874-5fe3-45a2-b1ad-d4ec267267cf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4435,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

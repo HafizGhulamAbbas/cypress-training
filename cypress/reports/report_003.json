@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-07T12:02:25.446Z",
+    "end": "2022-10-07T12:02:35.317Z",
+    "duration": 9871,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "54c9f539-02a2-4fa8-9dad-ef1b43ee9129",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/Framework.js",
+      "file": "cypress/integration/testcases/Framework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b1079c10-c807-4f3f-b1f9-89b96e211a3b",
+          "title": "Place Order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add cart to item and purchase",
+              "fullTitle": "Place Order Add cart to item and purchase",
+              "timedOut": null,
+              "duration": 8307,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst productsPage = new _ProductsPage.default();\nconst cartPage = new _CartPage.default();\nconst checkoutPage = new _CheckoutPage.default();\ncy.visit(Cypress.env('e_commerce_url'));\nhomePage.getNameInput().type(this.data.name);\nhomePage.getGender().select(this.data.gender);\nhomePage.getBindedNameInput().should('have.value', this.data.name); // Validating the name input field if it has min length 2\nhomePage.getNameInput().should('have.attr', 'minlength', 2); // Validate disability of an element\nhomePage.getEmployeeStatusEntrepreneur().should('be.disabled'); // Select multiple items and add to cart\nhomePage.getShopPage().click();\nfor (let product of this.data.productName) {\n  cy.selectProduct(product);\n}\nproductsPage.getCheckOut().click();\nlet totalPrice = 0;\ncartPage.getProductsPrice().each(product => {\n  const productPrice = product.text().split(\" \")[1].trim();\n  totalPrice += Number(productPrice);\n}).then(() => {\n  cy.log(\"Total Price Calculation: \" + totalPrice);\n});\ncartPage.getTotalPrice().then(element => {\n  const price = Number(element.text().split(\" \")[1].trim());\n  expect(price).to.equal(totalPrice);\n});\ncartPage.getCheckoutButton().click();\ncheckoutPage.getDeliveryLocation().type('India');\nCypress.config('defaultCommandTimeout', 8000);\ncheckoutPage.getIndiaAsDeliveryLocation().click();\ncheckoutPage.getTermsAndCondition().check({\n  force: true\n}).should('be.checked');\ncheckoutPage.getPurchaseButton().click();\ncheckoutPage.getSuccessAlert().should('include.text', checkoutPage.getSuccessMessage());",
+              "err": {},
+              "uuid": "689fb5af-ed74-4a9c-bbbb-904ecafc84a9",
+              "parentUUID": "b1079c10-c807-4f3f-b1f9-89b96e211a3b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "689fb5af-ed74-4a9c-bbbb-904ecafc84a9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8307,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

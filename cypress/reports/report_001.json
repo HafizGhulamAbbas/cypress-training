@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-07T12:02:10.552Z",
+    "end": "2022-10-07T12:02:16.672Z",
+    "duration": 6120,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2ef066a9-5b0e-462f-b7ea-e455ed4c5c8e",
+      "title": "",
+      "fullFile": "cypress/integration/testcases/CheckBox.js",
+      "file": "cypress/integration/testcases/CheckBox.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "80523eaf-111e-439a-8140-158fbb308eaf",
+          "title": "Handle Check Boxes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "using check method provided by cypress",
+              "fullTitle": "Handle Check Boxes using check method provided by cypress",
+              "timedOut": null,
+              "duration": 4295,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#checkBoxOption1').check().should('be.checked').and('have.value', \"option1\");\ncy.get('#checkBoxOption1').uncheck().should('not.be.checked'); // Check multiple checkboxes using value\ncy.get('input[type=\"checkbox\"]').check(['option2', 'option3']);\ncy.get('#checkBoxOption2').check().should('be.checked');\ncy.get('#checkBoxOption3').check().should('be.checked');",
+              "err": {},
+              "uuid": "22069115-504d-45a2-bdba-d1b516ad4832",
+              "parentUUID": "80523eaf-111e-439a-8140-158fbb308eaf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "22069115-504d-45a2-bdba-d1b516ad4832"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4295,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

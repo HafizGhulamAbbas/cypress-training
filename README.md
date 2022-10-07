@@ -9,3 +9,11 @@ To Make the project working, follow below steps:
 5. Execute test using: npm run todo
 6. For Cypress dashboard recording --> ./node_modules/cypress/bin/cypress run --record --key 51de9b0e-e3d8-45a8-a25c-c7941c17344d
 7. Implement reporting via 'https://www.npmjs.com/package/mochawesome'. Run via --reporter mochawesome
+
+Update for mochawesome reporting:
+- We need three packages for effective reporting: mochawesome, mochawesome-merge, and mochawesome-report-generator.
+
+LINKS:
+1. https://www.npmjs.com/package/mochawesome
+2. https://www.npmjs.com/package/mochawesome-merge
+3. https://www.npmjs.com/package/mochawesome-report-generator
