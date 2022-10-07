@@ -21,5 +21,14 @@ describe('Place Order', function () {
 
         // Validate disability of an element
         cy.get('#inlineRadio3').should('be.disabled')
+
+
+        // Select an item and add to cart
+        cy.get('a[href*="shop"]').click()
+        cy.get('h4.card-title').each((element, index) => {
+            if(element.text().includes("Blackberry")) {
+                cy.get('button.btn.btn-info').eq(index).click()
+            }
+        })
     })    
   })
