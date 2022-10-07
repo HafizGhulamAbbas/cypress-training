@@ -22,9 +22,10 @@ describe('Place Order', function () {
         // Validate disability of an element
         cy.get('#inlineRadio3').should('be.disabled')
 
-
-        // Select an item and add to cart
+        // Select multiple items and add to cart
         cy.get('a[href*="shop"]').click()
-        cy.selectProduct("Blackberry")
+        for(let product of this.data.productName){
+            cy.selectProduct(product)
+        }
     })    
   })
