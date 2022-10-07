@@ -4,8 +4,10 @@
   "description": "This project is intended to make a framework from scratch",
   "main": "index.js",
   "scripts": {
-    "todo": "cypress run",
-    "chromeTest": "npm run todo -- --browser chrome --headed",
+    "test": "node_modules/.bin/cypress run",
+    "chromeTest": "npm run test -- --browser chrome --headed",
+    "cypresDashboardRecord": "npm run test -- --record --key 51de9b0e-e3d8-45a8-a25c-c7941c17344d",
+    "addToCart": "npm run test -- --spec \"cypress/integration/purchase/*\"",
     "merge-report": "mochawesome-merge cypress/reports/*.json > cypress/reports/finalReport.json",
     "generate-report": "marge cypress/reports/finalReport.json --repoDir ./ --inline",
     "final-report": "npm run merge-report && npm run generate-report"

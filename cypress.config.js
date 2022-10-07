@@ -6,7 +6,7 @@ module.exports = defineConfig({
     setupNodeEvents (on, config) {
       // implement node event listeners here
     },
-    specPattern: 'cypress/integration/testcases/*.js',
+    specPattern: ['cypress/integration/testcases/*.js', 'cypress/integration/purchase/*.js'],
     defaultCommandTimeout: 6000,
     reporter: 'mochawesome',
     reporterOptions: {
