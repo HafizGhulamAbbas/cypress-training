@@ -14,6 +14,12 @@ describe('Place Order', function () {
 
         cy.get('input[name="name"]:nth-child(2)').type(this.data.name)
         cy.get('select').select(this.data.gender)
+        cy.get('input[name="name"]:nth-child(1)').should('have.value', this.data.name)
 
+        // Validating the name input field if it has min length 2
+        cy.get('input[name="name"]:nth-child(2)').should('have.attr', 'minlength', 2)
+
+        // Validate disability of an element
+        cy.get('#inlineRadio3').should('be.disabled')
     })    
   })
