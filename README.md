@@ -17,3 +17,11 @@ LINKS:
 1. https://www.npmjs.com/package/mochawesome
 2. https://www.npmjs.com/package/mochawesome-merge
 3. https://www.npmjs.com/package/mochawesome-report-generator
+
+
+Cucumber setup:
+1. Install plugin: cypress-cucumber-preprocessor --> https://www.npmjs.com/package/cypress-cucumber-preprocessor
+2. Configure plugin (cypress.config.js)
+3. Create a configuration for plugin (package.json)
+4. Update specPattern to pick .feature specs
+5. Install extension for gherkin syntax --> Cucumber (Gherkin) Full Support
