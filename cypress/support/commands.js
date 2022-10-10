@@ -20,6 +20,15 @@ Cypress.Commands.add('selectProduct', (productName) => {
     })
 })
 
+Cypress.Commands.add('getLoginToken', () => {
+    cy.request('POST', 'https://qa-hcc.mynisum.com/api/v1/auth/login', 
+    {username: "mwaqaryb@nisum.com12", password: "nisum123"})
+    .then((response) => {
+        expect(response.status).to.eq(200)
+        Cypress.env('Admin-Token', response.body.objectData["accessToken"])
+    })
+})
+
 //
 //
 // -- This is a child command --
