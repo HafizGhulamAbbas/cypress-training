@@ -5,10 +5,10 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents (on, config) {
       // implement node event listeners here
-      on('file:preprocessor', cucumber())
+      // on('file:preprocessor', cucumber())
     },
     // specPattern: ['cypress/integration/testcases/*.js', 'cypress/integration/purchase/*.js'],
-    specPattern: 'cypress/integration/testcases/BDD/*.feature',
+    specPattern: 'cypress/integration/testcases/*.js',
     defaultCommandTimeout: 6000,
     reporter: 'mochawesome',
     reporterOptions: {
