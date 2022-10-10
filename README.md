@@ -25,3 +25,5 @@ Cucumber setup:
 3. Create a configuration for plugin (package.json)
 4. Update specPattern to pick .feature specs
 5. Install extension for gherkin syntax --> Cucumber (Gherkin) Full Support
+
+USEFUL link for API testing and verifying response from fixture: https://glebbahmutov.com/blog/fixture-and-request/
