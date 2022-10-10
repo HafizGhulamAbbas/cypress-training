@@ -22,5 +22,17 @@ describe('API testing using cypress', () => {
         cy.get('p').should('have.text', 'Oops only 1 Book available')
 
     })
+
+    it('Fetch AuthorName "malhotra" books', () => {
+        cy.visit('https://rahulshettyacademy.com/angularAppdemo/')
+        cy.intercept('GET', 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty', (request) => {
+            request.url = 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=malhotra'
+            request.continue((response) => {
+                expect(response.statusCode).to.equal(403)
+            })
+        }).as('changedUrlResponse')
+        cy.get('button.btn.btn-primary').click()
+        cy.wait('@changedUrlResponse')
+    })
 })
 
