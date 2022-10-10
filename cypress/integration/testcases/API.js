@@ -16,7 +16,9 @@ describe('API testing using cypress', () => {
         }).as('bookRetriever')
 
         cy.get('button.btn.btn-primary').click()
-        cy.wait('@bookRetriever')
+        cy.wait('@bookRetriever').should(({request, response}) => {
+            cy.get('tr').should('have.length', response.body.length+1)
+        })
         cy.get('p').should('have.text', 'Oops only 1 Book available')
 
     })
